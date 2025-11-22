@@ -1,53 +1,133 @@
 /* default_styles.css */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 100%;
-        }
-        /** Header Styles **/
-        header {
-            background: #2d3437 url(../images/background.jpg) no-repeat center;
-            background-size: cover;
-            color: white;
-            margin: 0;
-        }
-        h1 {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            text-align: center;
-            padding-top: 75px;
-            padding-bottom: 75px;
-            margin: 0;
-        }
-        /** Navigation Styles **/
-        nav ul { 
-            list-style-type: none;
-            background-color: #2d3437;
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-        }
-        nav li { 
-            float: left; 
-        }
-        nav a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 20px;
-         }
-        nav a:hover { 
-            background-color: #135367; 
-        }
-        /** Main Styles **/
-        main { 
-            padding: 20px; 
-        }
-        /** Footer Styles **/
-        footer {
-            background-color: #2d3437;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a { 
-            color: white; 
-        }
+/*
+Author: JOE2165091
+Course: CIS133DA
+Lesson: 8
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/** Wrapper Styles **/
+#wrapper {
+    background-color: #f5f5f5; /* light gray background */
+    margin-top: 50px; /* moves content down below fixed nav */
+}
+
+/** Header Styles **/
+header {
+    background: #2d3437 url(../images/background.jpg) no-repeat center; /* adjusted URL relative to stylesheet */
+    background-size: cover;
+    color: white;
+    margin: 0;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 75px 20px;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/** Navigation Styles **/
+nav ul { 
+    list-style-type: none;
+    background-color: #2d3437;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: fixed; /* fixed navigation bar */
+    top: 0; /* position at top of page */
+    width: 100%; /* full width */
+    z-index: 1000; /* ensure nav stays above other content */
+}
+
+nav li { 
+    flex: 1;
+}
+
+nav li.right {
+    margin-left: auto;
+    background-color: #1a7c4d; /* green background for Book Appointment */
+    float: right; /* float to the right */
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover { 
+    background-color: #135367; 
+}
+
+nav a.active {
+    background-color: #d4edda; /* light green background for active page */
+    color: #155724; /* dark green text for contrast */
+}
+
+/** Main Styles **/
+main { 
+    padding: 20px;
+    width: 900px; /* fixed width */
+    box-sizing: border-box; /* include padding in width calculation */
+    margin: 0 auto; /* center the element */
+}
+
+/** Aside Styles **/
+aside {
+    background-color: #6c757d; /* medium gray background */
+    width: 30%; /* 30% of container width */
+    box-sizing: border-box; /* include padding in width calculation */
+    padding: 10px; /* padding on all sides */
+    margin: 10px; /* margin on all sides */
+    float: right; /* float to the right */
+}
+
+aside img {
+    width: 100%; /* fill full width of container */
+    height: 200px; /* fixed height */
+    object-fit: cover; /* clip image to fit container */
+    opacity: 0.6; /* 60% opacity */
+    transition: opacity 0.3s ease; /* smooth transition for hover */
+}
+
+aside img:hover {
+    opacity: 1; /* 100% opacity on hover */
+}
+
+aside p {
+    margin: 0; /* remove margin on all sides */
+    color: #495057; /* gray text color */
+}
+
+aside a {
+    color: #e9ecef; /* light gray link color */
+}
+
+/** Footer Styles **/
+footer {
+    background-color: #2d3437;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    clear: both; /* clear the float from aside */
+}
+
+footer a { 
+    color: white; 
+}
