@@ -19,7 +19,7 @@ body {
 /** Wrapper Styles **/
 #wrapper {
     background-color: #f5f5f5; /* light gray background */
-    margin-top: 50px; /* moves content down below fixed nav */
+    margin-top: 60px; /* increased to account for fixed nav */
 }
 
 /** Header Styles **/
@@ -59,7 +59,6 @@ nav li {
 nav li.right {
     margin-left: auto;
     background-color: #1a7c4d; /* green background for Book Appointment */
-    float: right; /* float to the right */
 }
 
 nav a {
@@ -86,6 +85,10 @@ main {
     width: 900px; /* fixed width */
     box-sizing: border-box; /* include padding in width calculation */
     margin: 0 auto; /* center the element */
+    background-color: white; /* added white background */
+    border-radius: 5px; /* subtle rounding */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* subtle shadow */
+    overflow: hidden; /* contain floats */
 }
 
 /** Aside Styles **/
@@ -94,7 +97,7 @@ aside {
     width: 30%; /* 30% of container width */
     box-sizing: border-box; /* include padding in width calculation */
     padding: 10px; /* padding on all sides */
-    margin: 10px; /* margin on all sides */
+    margin: 0 0 20px 20px; /* adjusted margins */
     float: right; /* float to the right */
 }
 
@@ -110,13 +113,30 @@ aside img:hover {
     opacity: 1; /* 100% opacity on hover */
 }
 
-aside p {
-    margin: 0; /* remove margin on all sides */
-    color: #495057; /* gray text color */
+/* Fixed figcaption styles */
+aside figcaption {
+    margin: 10px 0 0 0; /* remove margin on all sides */
+    color: #e9ecef; /* light gray text color */
+    font-size: 0.9em;
 }
 
 aside a {
-    color: #e9ecef; /* light gray link color */
+    color: #a5d8ff; /* light blue link color */
+}
+
+/** Article Styles **/
+article {
+    overflow: hidden; /* contain the floated aside */
+}
+
+article h2 {
+    color: #2d3437;
+    margin-bottom: 15px;
+}
+
+article p {
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /** Footer Styles **/
